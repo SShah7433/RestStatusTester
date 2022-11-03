@@ -17,7 +17,7 @@ jobs:
       - checkout
       - run:
           name: Change directory to src
-          command: cd src
+          command: pwd && ls && cd src
       - run:
           name: Install Dependencies
           command: go mod download
