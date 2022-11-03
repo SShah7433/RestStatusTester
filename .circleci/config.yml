@@ -20,11 +20,13 @@ jobs:
           name: Install Dependencies
           command: go mod download
       - run:
+          name: Make Output Directory
+          command: mkdir dist
+      - run:
           name: Build binaries
-          command: go build -o RestStatusTester .
+          command: go build -o dist/RestStatusTester .
       - store_artifacts:
-          path: RestStatusTester
-          destination: binaries
+          path: dist
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
